@@ -16,6 +16,8 @@ class Instance:
     def process(self):
         for idx in range(len(self.line)):
             if self.line[idx].find('<') != -1 \
+                    or self.line[idx].find('>') != -1 \
+                    or self.line[idx].find('\\') != -1 \
                     or self.line[idx].find('%') != -1 \
                     or self.line[idx].find('[') != -1:
                 self.map[idx] = 1

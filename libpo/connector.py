@@ -35,12 +35,9 @@ class Instance:
                 idx += 1
             else:
                 new_list.append(list[pointer]+" ")
-                while self.map[idx] == 0 and idx<len(self.elem)-1:
+                while idx<len(self.elem) and self.map[idx] == 0:
                     idx += 1
                 pointer += 1
-        for str in new_list:
-            print(str, end='')
-        print()
         return new_list
 
     def print_raw(self):
