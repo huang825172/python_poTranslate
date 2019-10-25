@@ -2,5 +2,6 @@ class Instance:
     def __init__(self):
         pass
 
-    def translate(self, word):
+    @staticmethod
+    def translate(word):
         return "中文"
