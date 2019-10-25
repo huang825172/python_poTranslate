@@ -34,7 +34,10 @@ def translate(filename):
         po_writer.close()
     except FileNotFoundError as e:
         print(e)
-        exit(0)
     except RuntimeError as e:
         print(e)
-        exit(0)
+    except Exception as e:
+        print(e)
+    finally:
+        if po_writer:
+            po_writer.close()

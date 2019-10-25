@@ -10,7 +10,8 @@ class Instance:
         self._out_list = []
         self._filter = libpo_filter.Instance()
         self._connector = libpo_connector.Instance()
-        self._translate_api = bdapi.Instance()
+        self._translate_api = bdapi.Instance("appid", "key")
+        self._translate_api.translatew("apple", "en", "zh")
 
     # 对一个未翻译字符串列表初始化
     def init(self, task_list):
