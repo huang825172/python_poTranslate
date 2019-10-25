@@ -4,11 +4,13 @@ from libbdtranslate import task_translate
 META_LABEL = "META"
 TASK_LABEL = "TASK"
 
-
+# 对指定文件进行翻译工作
+# 暂时没有实现多线程
+# 考虑到百度翻译的效率，后续可能需要实现异步调用和线程同步
 def translate(filename):
     try:
         po_reader = libpo_reader.Instance(filename)
-        po_writer = open("out.po", 'w', encoding='UTF-8')
+        po_writer = open("translated_" + filename, 'w', encoding='UTF-8')
         po_translator = task_translate.Instance()
         for part in po_reader.get_filestruct():
             if part[0] == META_LABEL:
